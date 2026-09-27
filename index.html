@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>GMAT 675 Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#F1F3F6; --surface:#FFFFFF; --ink:#141C24; --muted:#56616D; --faint:#8893A0; --line:#DCE1E7;
+  --accent:#2446A6; --accent-ink:#FFFFFF;
+  --q:#B5471D; --di:#6A3FB2; --v:#17775A; --done:#17775A;
+  --shadow:0 1px 2px rgba(20,28,36,.06),0 6px 20px rgba(20,28,36,.07);
+  --display:"IBM Plex Sans Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0E141A; --surface:#161F28; --ink:#E4EAF0; --muted:#9FAAB6; --faint:#6F7B87; --line:#28333E;
+    --accent:#8AA5FF; --accent-ink:#0E141A;
+    --q:#F0935F; --di:#B99CF2; --v:#5FCB9F; --done:#5FCB9F;
+    --shadow:0 1px 2px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0E141A; --surface:#161F28; --ink:#E4EAF0; --muted:#9FAAB6; --faint:#6F7B87; --line:#28333E;
+  --accent:#8AA5FF; --accent-ink:#0E141A;
+  --q:#F0935F; --di:#B99CF2; --v:#5FCB9F; --done:#5FCB9F;
+  --shadow:0 1px 2px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+.wrap{max-width:980px;margin:0 auto;padding-inline:20px;padding-block:32px 72px;display:flex;flex-direction:column;gap:44px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+p{margin:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.eyebrow{font:500 11.5px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.09em;color:var(--muted)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+
+/* header */
+.top{display:flex;flex-direction:column;gap:14px}
+.top h1{font-size:clamp(36px,6.4vw,60px);font-weight:700;line-height:1.02}
+.lede{max-width:62ch;color:var(--muted);font-size:16px}
+.lede b{color:var(--ink);font-weight:600}
+.diag{display:flex;flex-wrap:wrap;gap:8px 18px;font:500 13px/1.4 var(--mono);color:var(--muted)}
+.diag span b{color:var(--ink);font-weight:500}
+.diag .weak b{color:var(--q)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0;margin-top:10px;border-top:1px solid var(--line)}
+.stat{display:flex;flex-direction:column;gap:4px;padding:14px 16px 4px 0}
+.stat .v{font:500 28px/1.1 var(--mono);font-variant-numeric:tabular-nums}
+.stat .v small{font-size:14px;color:var(--muted)}
+.save{font:400 12.5px/1.4 var(--mono);color:var(--muted);display:flex;align-items:center;gap:8px}
+.save i{width:7px;height:7px;border-radius:50%;background:var(--faint);display:inline-block}
+.save[data-s="saved"] i{background:var(--done)}
+.save[data-s="saving"] i{background:var(--accent)}
+.save[data-s="local-err"] i{background:var(--q)}
+
+/* section headings */
+.sec{display:flex;flex-direction:column;gap:16px}
+.sec > header{display:flex;flex-direction:column;gap:4px}
+.sec h2{font-size:26px;font-weight:600;line-height:1.15}
+.sec .sub{color:var(--muted);max-width:66ch}
+
+/* today */
+.today{background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);overflow:hidden}
+.today .band{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;padding:14px 20px;border-bottom:1px solid var(--line)}
+.today .band a{font:500 12px/1.3 var(--mono);text-decoration:none}
+.today .inner{padding:4px 20px 18px}
+.today .day{border-top:0}
+.today .day .title{font-size:24px}
+.today .next{padding:12px 20px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px}
+.today .next b{color:var(--ink);font-weight:600}
+
+/* reality */
+.reality{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px 36px;padding-top:4px}
+.reality p{max-width:60ch}
+.figure{display:flex;flex-direction:column;gap:4px;border-left:2px solid var(--line);padding-left:14px}
+.figure .v{font:500 26px/1.1 var(--mono);font-variant-numeric:tabular-nums}
+.figure .l{color:var(--muted);font-size:13.5px}
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px}
+
+/* rhythm */
+.rhythm{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+.rd{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 10px 12px;display:flex;flex-direction:column;gap:6px;border-top:3px solid var(--k)}
+.rd .dn{font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.rd .rl{font:600 15px/1.2 var(--display);color:var(--k)}
+.rd .rt{font-size:12.5px;line-height:1.4;color:var(--muted)}
+@media (max-width:760px){.rhythm{grid-template-columns:repeat(2,minmax(0,1fr))}.rd:last-child{grid-column:span 2}}
+
+/* kinds */
+.k-quant{--k:var(--q)} .k-di{--k:var(--di)} .k-verbal{--k:var(--v)}
+.k-timed,.k-mock,.k-setup,.k-target{--k:var(--accent)} .k-test{--k:var(--accent)}
+.k-review,.k-rest,.k-mixed{--k:var(--muted)}
+.chip{display:inline-flex;align-items:center;font:500 10.5px/1 var(--mono);text-transform:uppercase;letter-spacing:.07em;color:var(--k);background:color-mix(in srgb,var(--k) 13%,transparent);padding:4px 7px;border-radius:4px;white-space:nowrap}
+.k-test .chip{background:var(--accent);color:var(--accent-ink)}
+
+/* chart */
+.chartbox{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 10px 10px}
+.chartscroll{overflow-x:auto}
+.chartscroll svg{display:block;width:100%;height:auto;min-width:540px}
+.ax{font:11px var(--mono);fill:var(--muted)}
+.grid{stroke:var(--line);stroke-width:1}
+.goal{stroke:var(--accent);stroke-width:1;stroke-dasharray:3 4;opacity:.7}
+.goaltx{font:500 11px var(--mono);fill:var(--accent)}
+.pace{fill:none;stroke:var(--faint);stroke-width:1.5;stroke-dasharray:5 4}
+.pacept{fill:var(--surface);stroke:var(--faint);stroke-width:1.5}
+.pacetx{font:10.5px var(--mono);fill:var(--faint)}
+.act{fill:none;stroke:var(--q);stroke-width:2.25}
+.actpt{fill:var(--q);stroke:var(--surface);stroke-width:2}
+.acttx{font:600 11.5px var(--mono);fill:var(--ink)}
+.testln{stroke:var(--muted);stroke-width:1;opacity:.5}
+.testtx{font:500 10.5px var(--mono);fill:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 20px;padding:8px 10px 2px;font:12px var(--mono);color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.legend svg{flex:none}
+
+/* plan */
+.phase{display:flex;flex-direction:column;gap:0;margin-top:14px}
+.phase > .ph{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding-bottom:10px}
+.phase h3{font-size:21px;font-weight:600}
+.phase .pd{font:12px var(--mono);color:var(--muted)}
+.phase .pg{flex-basis:100%;color:var(--muted);font-size:14px;max-width:70ch}
+details.week{border-top:1px solid var(--line)}
+details.week:last-child{border-bottom:1px solid var(--line)}
+details.week > summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:86px 1fr auto;align-items:center;gap:12px;padding:13px 2px}
+details.week > summary::-webkit-details-marker{display:none}
+.wk{font:600 16px/1.2 var(--display)}
+.wd{font:12.5px var(--mono);color:var(--muted)}
+.wd .cur{color:var(--accent);font-weight:500;margin-left:8px}
+.wprog{display:flex;align-items:center;gap:10px}
+.ticks{display:flex;gap:3px}
+.ticks i{width:11px;height:11px;border-radius:2px;border:1.5px solid var(--k);background:transparent;display:block}
+.ticks i.on{background:var(--k)}
+.wc{font:12px var(--mono);color:var(--muted);min-width:28px;text-align:right}
+details.week > summary::after{content:"";display:none}
+details.week[open] > summary .wk{color:var(--accent)}
+.days{padding:0 0 12px}
+
+.day{display:grid;grid-template-columns:22px 92px minmax(0,1fr);grid-template-areas:"c w b";gap:4px 14px;padding:14px 0;border-top:1px dashed var(--line)}
+.day > input{grid-area:c;margin:3px 0 0;width:18px;height:18px;accent-color:var(--done);cursor:pointer}
+.day .when{grid-area:w;display:flex;flex-direction:column;gap:1px;cursor:pointer}
+.day .dow{font:500 11px/1.2 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.day .date{font:500 14px/1.3 var(--mono)}
+.day .body{grid-area:b;display:flex;flex-direction:column;gap:8px;min-width:0;transition:opacity .2s}
+.day .head{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.day .title{font:600 17px/1.25 var(--display);flex:1 1 220px;min-width:0}
+.day .mins{font:12px var(--mono);color:var(--muted)}
+.blocks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px}
+.blocks li{display:grid;grid-template-columns:40px minmax(0,1fr);gap:10px;font-size:14px;line-height:1.45;max-width:78ch}
+.blocks .bm{font:12.5px/1.6 var(--mono);color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.blocks b{font-weight:600}
+.note{font-size:13.5px;color:var(--muted);max-width:74ch;padding-left:50px}
+.note b{color:var(--ink);font-weight:600}
+.scorerow{display:flex;align-items:center;gap:10px;padding-left:50px;font:12.5px var(--mono);color:var(--muted)}
+.scorerow input{width:92px;font:500 14px var(--mono);padding:5px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
+.day.is-done .body{opacity:.5}
+.day.is-done .title{text-decoration:line-through;text-decoration-thickness:1px}
+@media (max-width:600px){
+  .day{grid-template-columns:22px minmax(0,1fr);grid-template-areas:"c w" ". b"}
+  .day .when{flex-direction:row;gap:8px;align-items:baseline}
+  details.week > summary{grid-template-columns:1fr auto;grid-template-rows:auto auto;row-gap:2px}
+  details.week > summary .wk{grid-column:1}
+  details.week > summary .wd{grid-column:1;grid-row:2}
+  details.week > summary .wprog{grid-column:2;grid-row:1 / span 2}
+  .note,.scorerow{padding-left:0}
+  .blocks li{grid-template-columns:34px minmax(0,1fr)}
+}
+
+/* resources */
+.res{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 36px}
+.res div{padding:14px 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:4px}
+.res h3{font-size:17px;font-weight:600}
+.res p{color:var(--muted);font-size:14px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <p class="eyebrow">GMAT Focus Edition · 90 minutes a day · Sep 27 to Jan 23</p>
+    <h1>515 to 675</h1>
+    <p class="lede">Every day from today through <b>Test 1 on Saturday, Jan 2</b> and a Superscore retake on <b>Saturday, Jan 23</b>. Check off each session as you finish it and log your practice exam scores; both save to this page.</p>
+    <div class="diag"><span>Diagnostic <b>515</b> (32nd pct)</span><span class="weak">Quant <b>72</b> (20th)</span><span>Verbal <b>79</b> (46th)</span><span>Data Insights <b>75</b> (46th)</span></div>
+    <div class="stats">
+      <div class="stat"><span class="eyebrow">Sessions done</span><span class="v" id="st-done">0</span></div>
+      <div class="stat"><span class="eyebrow">Hours logged</span><span class="v" id="st-hours">0</span></div>
+      <div class="stat"><span class="eyebrow" id="st-test-l">Days to Test 1</span><span class="v" id="st-test">0</span></div>
+      <div class="stat"><span class="eyebrow">Latest score</span><span class="v" id="st-score">515</span></div>
+    </div>
+    <p class="save" id="save" data-s="local"><i></i><span id="save-t">Connecting…</span></p>
+  </header>
+
+  <section class="sec" aria-labelledby="h-today">
+    <header><p class="eyebrow" id="today-eyebrow">Today</p><h2 id="h-today" class="sr">Today's session</h2></header>
+    <div class="today" id="today"></div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-real">
+    <header><p class="eyebrow">Reality check</p><h2 id="h-real">What 90 minutes a day buys you</h2></header>
+    <div class="reality">
+      <div class="figs">
+        <div class="figure"><span class="v" id="fig-hours">146 h</span><span class="l">of study before Test 1</span></div>
+        <div class="figure"><span class="v">240–360 h</span><span class="l">typical for a 100 to 150 point gain</span></div>
+        <div class="figure"><span class="v">+160</span><span class="l">points you need</span></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <p>At this pace my estimate for Jan 2 is roughly <b>605 to 645</b>. The Jan 23 retake, plus the Superscore, is your realistic shot at 675. Your 515 came from a cold first attempt, so your real starting point is probably somewhat higher.</p>
+        <p>Two ways to close the gap: study <b>3 hours a day over winter break</b> (Dec 19 to Jan 1 adds about 21 hours), and treat the practice exams as gates. If Exams 5 and 6 both come in under 635, move Test 1 back.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-rhythm">
+    <header><p class="eyebrow">The weekly shape</p><h2 id="h-rhythm">Half your time goes to Quant</h2><p class="sub">Quant is your weakest section by far, and Data Insights uses the same math, so drilling Quant lifts both. From Phase 3 on, the learning days become full timed sections, but the weekly shape stays the same.</p></header>
+    <div class="rhythm">
+      <div class="rd k-quant"><span class="dn">Mon</span><span class="rl">Quant · learn</span><span class="rt">New topic: TTP lesson and drills</span></div>
+      <div class="rd k-quant"><span class="dn">Tue</span><span class="rl">Quant · timed</span><span class="rt">Timed set on Monday's topic</span></div>
+      <div class="rd k-di"><span class="dn">Wed</span><span class="rl">Data Insights</span><span class="rt">One question type per week</span></div>
+      <div class="rd k-quant"><span class="dn">Thu</span><span class="rl">Quant · learn</span><span class="rt">Second topic of the week</span></div>
+      <div class="rd k-verbal"><span class="dn">Fri</span><span class="rl">Verbal</span><span class="rt">One CR or RC question type</span></div>
+      <div class="rd k-mock"><span class="dn">Sat</span><span class="rl">Timed</span><span class="rt">Full section or practice exam</span></div>
+      <div class="rd k-review"><span class="dn">Sun</span><span class="rl">Review</span><span class="rt">Redo misses, one RC passage, flashcards</span></div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-path">
+    <header><p class="eyebrow">Score path</p><h2 id="h-path">Are you on pace?</h2><p class="sub">The dashed line is the pace a 675 needs. Log each practice exam on its day in the plan below and your scores plot here.</p></header>
+    <div class="chartbox">
+      <div class="chartscroll"><svg id="chart" viewBox="0 0 640 230" role="img" aria-label="Practice exam scores against the pace needed for 675"></svg></div>
+      <div class="legend">
+        <span><svg width="26" height="10" aria-hidden="true"><line x1="0" y1="5" x2="26" y2="5" class="pace"/></svg>Pace for 675</span>
+        <span><svg width="26" height="10" aria-hidden="true"><line x1="0" y1="5" x2="26" y2="5" class="act"/><circle cx="13" cy="5" r="3.5" class="actpt"/></svg>Your scores</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-plan">
+    <header><p class="eyebrow">Day by day</p><h2 id="h-plan">The plan</h2><p class="sub">Each session is 90 minutes split into timed blocks. Practice exam and test days run longer; light days run shorter.</p></header>
+    <div id="plan"></div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-res">
+    <header><p class="eyebrow">Materials</p><h2 id="h-res">What to use</h2></header>
+    <div class="res">
+      <div><h3>Target Test Prep (Quant and Data Insights)</h3><p>Your main course. The Quant topics in this plan follow its chapters. It bills monthly, so keep the pace up.</p></div>
+      <div><h3>GMAT Official Guide 2025–2026</h3><p>Real retired questions for timed sets and all Verbal work. Use the online question bank to build custom timed sets.</p></div>
+      <div><h3>Official Practice Exams (mba.com)</h3><p>Exams 1 and 2 are free; 3 to 6 are sold together. This plan assumes your diagnostic was Exam 1. If it wasn't, take Exam 1 on Oct 24 and shift the rest.</p></div>
+      <div><h3>GMAT Club forum</h3><p>Free expert explanations for nearly every OG question. Search the first line of a question to find its thread.</p></div>
+      <div><h3>Your error log</h3><p>A spreadsheet with date, source, section, topic, why you missed it (concept, careless, timing), and the fix. Every Sunday runs on it.</p></div>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+"use strict";
+/* ---------- plan data ---------- */
+const S=(kind,title,blocks,extra)=>Object.assign({kind,title,blocks},extra||{});
+const LOG=["Log",15,"Error log every miss: topic, why you missed it (concept, careless, or timing), and the fix."];
+const QL=t=>S("quant",t,[["Learn",35,"TTP Quant lessons on this topic."],["Drill",40,"15 to 20 TTP questions, untimed. Write out every step."],LOG],{mode:"learn"});
+const QP=t=>S("quant",t,[["Warm-up",10,"Redo 5 misses from yesterday without looking at your old work."],["Timed",45,"20 questions on this topic at 2 minutes each, mixing OG Quant and TTP."],["Review",35,"Review every question, lucky guesses included. Log each miss."]],{mode:"timed"});
+const DI=t=>S("di",t,[["Learn",30,"TTP Data Insights lessons on this question type."],["Practice",45,"12 to 15 OG Data Insights questions of this type."],["Log",15,"Log misses. On Data Sufficiency, note whether you misjudged statement 1, statement 2, or the combination."]]);
+const VB=t=>S("verbal",t,[["Method",25,"Learn the approach from the OG explanations. Use GMAT Club threads for the hard ones."],["Practice",50,"12 to 15 OG Verbal questions of this type."],["Review",15,"For each miss, write one line on why the right answer wins and one on why yours loses."]]);
+const TS=(sec,d)=>S("timed","Timed "+sec+" section",[["Timed",45,d],["Review",45,"Review all of it. Log misses and any question that took over 3 minutes."]],{mode:sec});
+const MOCK=(n,t)=>S("mock","Official Practice Exam "+n,[["Exam",135,"Full test conditions: one sitting, only the 10-minute break, same time of day you'll test."]],{score:true,note:"<b>Pace marker for 675: "+t+"+.</b> This session runs about 45 minutes long."});
+const MREV=(n,note)=>S("review","Review Practice Exam "+n,[["Report",20,"Read the score report: accuracy by topic and time per question."],["Rework",55,"Rework every miss and every guess, then log them."],["Adjust",15,"Name your 3 weakest topics. They get the repair days next week."]],note?{note}:{});
+const REV=()=>S("review","Weekly review",[["Redo",40,"Redo every miss you logged this week, cold."],["Reading",30,"One timed Reading Comprehension passage (about 7 minutes), then review it closely."],["Flashcards",20,"Formulas and rules: exponent laws, divisibility, percent change, the DS answer grid."]]);
+const QSEC=()=>S("quant","Full Quant section",[["Timed",45,"21 mixed Quant questions in 45 minutes (about 2:08 each)."],["Review",45,"Review all 21. Log misses and anything over 3 minutes."]],{mode:"section"});
+const DISEC=()=>S("di","Full Data Insights section",[["Timed",45,"20 mixed DI questions in 45 minutes (about 2:15 each)."],["Review",45,"Review all 20. Log misses by question type."]],{mode:"section"});
+const VSEC=()=>S("verbal","Full Verbal section",[["Timed",45,"23 mixed Verbal questions in 45 minutes (about 1:57 each)."],["Review",45,"Review all 23. Log misses by question type."]],{mode:"section"});
+const WEAK=(k,l)=>S(k,"Weakest "+l+" topics",[["Pick",5,"Pull the 2 topics with the most misses in your error log."],["Relearn",30,"Reread the TTP lessons or OG explanations for those topics."],["Drill",40,"15 questions on those topics at 2 minutes each."],LOG],{mode:"repair"});
+const PACE=()=>S("quant","Pacing and guessing",[["Rule",10,"Set your cutoff: no plan by 1:30 means guess, bookmark, and move on."],["Sets",60,"Three sets of 7 mixed Quant questions, 15 minutes each. Guess on purpose when you hit the cutoff."],["Edits",20,"Practice the review screen: decide which bookmarked questions deserve your 3 answer changes."]],{mode:"strategy"});
+const HARDQ=()=>S("quant","Hard Quant set",[["Timed",30,"15 hard mixed TTP Quant questions in 30 minutes."],["Rework",45,"Redo every miss from scratch before reading the solution."],LOG],{mode:"hard"});
+const HARDDI=()=>S("di","Hard Multi-Source and Two-Part",[["Timed",35,"10 hard MSR and Two-Part Analysis questions."],["Review",40,"Review and log. Note where you lost time switching tabs."],["Flashcards",15,"DS answer grid and table-sorting shortcuts."]],{mode:"hard"});
+const HARDCR=()=>S("verbal","Hard Critical Reasoning",[["Timed",30,"12 hard CR questions at 2 minutes each."],["Review",45,"For each, name the argument's gap before rereading the answers."],["Reading",15,"One RC passage, timed."]],{mode:"hard"});
+const MIX=(k,l,n)=>S(k,"Short mixed "+l+" set",[["Timed",25,n+" mixed "+l+" questions."],["Review",50,"Review every question and log misses."],["Flashcards",15,"Formulas and rules."]],{mode:"maintenance"});
+const MIXQ=()=>S("quant","Mixed Quant from weeks 1 to 8",[["Timed",45,"20 questions across every topic so far, 2 minutes each."],["Review",45,"Review all 20 and log misses."]],{mode:"timed"});
+const LIGHT=(t,b)=>S("rest",t,b);
+const ORDER=()=>S("timed","Section order rehearsal",[["Timed",75,"Two sections back to back in your test-day order (try Quant first, then Data Insights). No pause between them."],["Skim",15,"Quick look at misses. Full review tomorrow."]],{mode:"stamina"});
+const TAPER=()=>S("review","Light review",[["Redo",40,"Yesterday's misses, then the 20 error-log misses you'd most hate to repeat."],["Flashcards",20,"Formulas and rules."]]);
+const LOGI=n=>S("rest","Rest and logistics",[["Check",20,"Confirm your test time, an ID that exactly matches your registration, and the route to the test center (or run the online system check). No studying."]],{note:n===1?"Happy New Year. Sleep early.":"Sleep early."});
+const TEST=n=>S("test","GMAT Test "+n,[["Test",135,"Three sections in your chosen order, with one optional 10-minute break."]],{score:true,note:n===1?"Unofficial scores appear right away. The official report posts in 3 to 5 business days, and you then have 48 hours for 5 free score sends.":"Your Superscore takes your best Quant, Verbal, and Data Insights across both tests."});
+const RESTDAY=()=>S("rest","Rest day",[["Rest",0,"No GMAT today."]]);
+const TPICK=()=>S("target","Choose your retake target",[["Scores",15,"Compare your three section scores against about 83 each, roughly what a 675 needs."],["Pick",10,"Pick the section with the most room to gain. It gets most of the next three weeks."],["Drill",50,"15 questions on that section's weakest topic."],LOG]);
+const TW=()=>S("target","Target section: weakest topics",[["Pick",5,"Pull the 2 most-missed topics in your target section."],["Relearn",30,"Reread the lessons for those topics."],["Drill",40,"15 questions on them, timed."],LOG]);
+const TSEC=()=>S("target","Target section: full timed section",[["Timed",45,"One full section in your target area under real timing."],["Review",45,"Review everything and log misses."]]);
+const THARD=()=>S("target","Target section: hard set",[["Timed",30,"12 to 15 hard questions from your target section."],["Rework",45,"Redo misses from scratch before reading solutions."],LOG]);
+const MAINT=()=>S("mixed","Keep the other two sections warm",[["Section A",40,"10 mixed questions from your stronger math section, then review."],["Section B",35,"8 mixed questions from the other non-target section, then review."],["Flashcards",15,"Formulas and rules."]]);
+const TPMOCK=()=>S("mock","Full-length third-party mock",[["Exam",135,"A full test from TTP, e-GMAT, or GMAT Club. Your six official exams are used up."]],{score:true,note:"Third-party scoring can differ from the official scale. Watch your target section's trend more than the total."});
+const TPREV=()=>S("review","Review the mock",[["Rework",60,"Rework every miss and guess in your target section first, then the others."],["Adjust",30,"Update your error log and pick next week's two repair topics."]]);
+
+const SETUP=S("setup","Set up your prep",[["Report",30,"Open the diagnostic's score report: which Quant topics and question types you missed, and your time per section."],["Buy",20,"Get the OG 2025–2026 (with the online question bank) and start Target Test Prep for Quant."],["Book",20,"Register for Saturday, Jan 2 at mba.com so the date is real."],["Log",20,"Build your error log: date, source, section, topic, why missed, fix."]]);
+
+const std=(qa,qb,di,vb,sat,sun)=>[QL(qa),QP(qa),DI(di),QL(qb),VB(vb),sat,sun||REV()];
+const WEEKS=[
+  {phase:1,days:std("Arithmetic: fractions, decimals, order of operations","Percents, ratios, and percent change","Data Sufficiency basics and the AD/BCE method","Critical Reasoning structure: premise, conclusion, assumption",TS("Quant","21 OG Quant questions, easy to medium, in 45 minutes. The goal is pacing, not score."))},
+  {phase:1,days:std("Linear equations and systems","Exponents and roots","Data Sufficiency with algebra, and the answer-C trap","Critical Reasoning: strengthen and weaken",TS("Quant","21 mixed OG Quant questions from weeks 1 and 2 in 45 minutes."))},
+  {phase:1,days:std("Inequalities and absolute value","Word problems: rates, work, and distance","Table Analysis","Reading Comprehension: mapping a passage",TS("Data Insights","20 mixed OG Data Insights questions in 45 minutes."))},
+  {phase:1,days:std("Number properties: divisibility, primes, factors","Number properties: remainders, odd and even, signs","Graphics Interpretation","Critical Reasoning: find the assumption, evaluate the argument",MOCK(2,555),MREV(2))},
+  {phase:2,days:std("Statistics: mean, median, range, standard deviation","Weighted averages and overlapping sets","Two-Part Analysis","Reading Comprehension: main idea and inference",TS("Verbal","23 mixed OG Verbal questions in 45 minutes."))},
+  {phase:2,days:std("Counting: permutations and combinations","Probability","Multi-Source Reasoning","Critical Reasoning: inference, boldface, explain the discrepancy",TS("Quant","21 medium-to-hard OG and TTP Quant questions in 45 minutes."))},
+  {phase:2,days:std("Mixtures, profit, and interest","Sequences and patterns","Hard Data Sufficiency: number properties","Reading Comprehension: detail and function questions under time",MOCK(3,595),MREV(3))},
+  {phase:2,days:std("Quadratics and factoring","Functions and coordinate geometry: lines and slopes","Mixed Data Insights at medium-to-hard level","Hard Critical Reasoning, mixed types",TS("Data Insights","20 mixed Data Insights questions in 45 minutes, from TTP's harder sets."))},
+  {phase:2,days:[WEAK("quant","Quant"),MIXQ(),WEAK("di","Data Insights"),LIGHT("Thanksgiving: short session",[["Redo",25,"Redo 10 logged misses."],["Flashcards",20,"Formulas and rules."]]),WEAK("verbal","Verbal"),TS("Quant","21 medium-to-hard mixed Quant questions in 45 minutes."),REV()]},
+  {phase:3,days:[QSEC(),WEAK("quant","Quant"),DISEC(),PACE(),VSEC(),MOCK(4,625),MREV(4)]},
+  {phase:3,days:[HARDQ(),WEAK("quant","Quant"),HARDDI(),QSEC(),HARDCR(),TS("Data Insights","20 mixed Data Insights questions in 45 minutes."),REV()]},
+  {phase:3,note:"If finals land this week, the short sets keep your skills warm without heavy new learning.",days:[MIX("quant","Quant",10),MIX("di","Data Insights",8),MIX("verbal","Verbal",10),MIX("quant","Quant",10),WEAK("quant","Quant"),MOCK(5,645),MREV(5)]},
+  {phase:4,days:[WEAK("quant","Quant"),DISEC(),QSEC(),VSEC(),LIGHT("Christmas: short session",[["Flashcards",20,"Formulas and rules."],["Redo",25,"Redo 10 logged misses."]]),MOCK(6,655),MREV(6,"<b>Decision point.</b> If Exams 5 and 6 both came in under 635, move Test 1 back two to three weeks. Rescheduling rules and fees are on mba.com.")]},
+  {phase:4,days:[QSEC(),WEAK("quant","Quant"),ORDER(),TAPER(),LOGI(1),TEST(1),RESTDAY()]},
+  {phase:5,days:[TPICK(),TW(),TSEC(),THARD(),MAINT(),TSEC(),REV()]},
+  {phase:5,days:[THARD(),TW(),MAINT(),TSEC(),TW(),TPMOCK(),TPREV()]},
+  {phase:5,days:[TSEC(),MAINT(),TW(),TAPER(),LOGI(2),TEST(2)]}
+];
+const PHASES={
+  1:{name:"Phase 1 · Foundations",goal:"Learn every core Quant topic once, and meet each Data Insights and Verbal question type."},
+  2:{name:"Phase 2 · Build",goal:"Harder Quant topics, the rest of the question types, and regular timed sets."},
+  3:{name:"Phase 3 · Speed",goal:"Full timed sections, pacing, and guessing strategy. The load stays steady through finals."},
+  4:{name:"Phase 4 · Peak",goal:"Last two official practice exams, a short taper, then Test 1."},
+  5:{name:"Phase 5 · Retake",goal:"Push your weakest section. The Superscore keeps your best section scores from both tests."}
+};
+const KIND={quant:"Quant",di:"Data Insights",verbal:"Verbal",timed:"Timed",mock:"Practice exam",review:"Review",rest:"Light",test:"Test day",target:"Target section",mixed:"Maintenance",setup:"Setup"};
+const PACEPTS=[["2026-09-27",515],["2026-10-24",555],["2026-11-14",595],["2026-12-05",625],["2026-12-19",645],["2026-12-26",655],["2027-01-02",675]];
+
+/* ---------- dates ---------- */
+const pad=n=>String(n).padStart(2,"0");
+const parse=iso=>{const a=iso.split("-").map(Number);return Date.UTC(a[0],a[1]-1,a[2]);};
+const addDays=(iso,n)=>new Date(parse(iso)+n*864e5).toISOString().slice(0,10);
+const diff=(a,b)=>Math.round((parse(b)-parse(a))/864e5);
+const fmt=(iso,o)=>new Date(parse(iso)).toLocaleDateString("en-US",Object.assign({timeZone:"UTC"},o));
+const now=new Date();const TODAY=now.getFullYear()+"-"+pad(now.getMonth()+1)+"-"+pad(now.getDate());
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+/* ---------- build days ---------- */
+const ALL=[];const byKey={};
+SETUP.key="2026-09-27";SETUP.week=0;SETUP.phase=1;ALL.push(SETUP);byKey[SETUP.key]=SETUP;
+let cursor="2026-09-28";
+WEEKS.forEach((w,i)=>{w.num=i+1;w.start=cursor;w.days.forEach((d,j)=>{d.key=addDays(cursor,j);d.week=i+1;d.phase=w.phase;ALL.push(d);byKey[d.key]=d;});w.end=addDays(cursor,w.days.length-1);cursor=addDays(cursor,7);});
+const mins=d=>d.blocks.reduce((s,b)=>s+b[1],0);
+const TEST1="2027-01-02",TEST2="2027-01-23";
+
+/* ---------- state ---------- */
+const LSKEY="gmat-675-plan-v1";
+let state={done:{},scores:{}};
+try{const r=localStorage.getItem(LSKEY);if(r){const p=JSON.parse(r);state={done:p.done||{},scores:p.scores||{}};}}catch(e){}
+const mirror=()=>{try{localStorage.setItem(LSKEY,JSON.stringify(state));}catch(e){}};
+
+/* ---------- render ---------- */
+function dayHTML(d,pre){
+  const m=mins(d);
+  const chip=KIND[d.kind]+(d.mode?" · "+d.mode:"");
+  const blocks=d.blocks.map(b=>'<li><span class="bm">'+(b[1]?b[1]+"m":"")+'</span><span><b>'+esc(b[0])+'.</b> '+esc(b[2])+'</span></li>').join("");
+  const note=d.note?'<p class="note">'+d.note+'</p>':"";
+  const score=d.score?'<label class="scorerow" for="'+pre+'s-'+d.key+'">Score<input type="number" class="score-in" id="'+pre+'s-'+d.key+'" data-key="'+d.key+'" min="205" max="805" step="10" inputmode="numeric" placeholder="e.g. 585"></label>':"";
+  return '<div class="day k-'+d.kind+'" data-key="'+d.key+'">'+
+    '<input type="checkbox" class="chk" id="'+pre+'c-'+d.key+'" data-key="'+d.key+'" aria-label="Mark '+fmt(d.key,{weekday:"long",month:"short",day:"numeric"})+' done">'+
+    '<label class="when" for="'+pre+'c-'+d.key+'"><span class="dow">'+fmt(d.key,{weekday:"short"})+'</span><span class="date">'+fmt(d.key,{month:"short",day:"numeric"})+'</span></label>'+
+    '<div class="body"><div class="head"><span class="chip">'+esc(chip)+'</span><span class="title">'+esc(d.title)+'</span><span class="mins">'+(m?m+" min":"Rest")+'</span></div>'+
+    '<ol class="blocks">'+blocks+'</ol>'+note+score+'</div></div>';
+}
+function weekOf(key){if(key<ALL[0].key)return 0;const d=byKey[key];return d?d.week:(key>TEST2?17:0);}
+function renderPlan(){
+  const cur=weekOf(TODAY);
+  let h='<div class="phase"><div class="ph"><h3>Start</h3><span class="pd">Sun Sep 27</span></div>'+
+    '<details class="week" data-week="0" id="w0"'+(cur===0?" open":"")+'><summary><span class="wk">Today</span><span class="wd">Sep 27'+(cur===0?'<span class="cur">● now</span>':"")+'</span><span class="wprog"><span class="ticks" data-ticks="0"></span><span class="wc" data-wc="0"></span></span></summary><div class="days">'+dayHTML(SETUP,"")+'</div></details></div>';
+  let ph=0;
+  WEEKS.forEach(w=>{
+    if(w.phase!==ph){
+      if(ph)h+="</div>";ph=w.phase;
+      const ws=WEEKS.filter(x=>x.phase===ph);
+      h+='<div class="phase"><div class="ph"><h3>'+PHASES[ph].name+'</h3><span class="pd">'+fmt(ws[0].start,{month:"short",day:"numeric"})+' to '+fmt(ws[ws.length-1].end,{month:"short",day:"numeric"})+'</span><p class="pg">'+PHASES[ph].goal+'</p></div>';
+    }
+    h+='<details class="week" data-week="'+w.num+'" id="w'+w.num+'"'+(cur===w.num?" open":"")+'><summary><span class="wk">Week '+w.num+'</span><span class="wd">'+fmt(w.start,{month:"short",day:"numeric"})+' to '+fmt(w.end,{month:"short",day:"numeric"})+(cur===w.num?'<span class="cur">● this week</span>':"")+'</span><span class="wprog"><span class="ticks" data-ticks="'+w.num+'"></span><span class="wc" data-wc="'+w.num+'"></span></span></summary><div class="days">'+
+      (w.note?'<p class="note" style="padding:10px 0 4px">'+w.note+'</p>':"")+w.days.map(d=>dayHTML(d,"")).join("")+'</div></details>';
+  });
+  h+="</div>";
+  document.getElementById("plan").innerHTML=h;
+}
+function renderToday(){
+  let key=TODAY,label="Today";
+  if(TODAY<ALL[0].key){key=ALL[0].key;label="First session";}
+  else if(!byKey[TODAY]){key=ALL[ALL.length-1].key;label="Plan complete";}
+  const d=byKey[key];const idx=ALL.indexOf(d);const nx=ALL[idx+1];
+  const wk=d.week===0?"Start":"Week "+d.week+" of "+WEEKS.length+" · "+PHASES[d.phase].name.replace("Phase "+d.phase+" · ","");
+  document.getElementById("today-eyebrow").textContent=label+" · "+fmt(key,{weekday:"long",month:"long",day:"numeric"});
+  document.getElementById("today").innerHTML='<div class="band"><span class="eyebrow">'+esc(wk)+'</span><a href="#w'+d.week+'">See the full week</a></div><div class="inner">'+dayHTML(d,"t-")+'</div>'+
+    (nx?'<p class="next">Next up, '+fmt(nx.key,{weekday:"long"})+': <b>'+esc(nx.title)+'</b></p>':"");
+}
+function drawChart(){
+  const W=640,H=230,L=44,R=18,T=18,B=28,pw=W-L-R,ph=H-T-B;
+  const x0="2026-09-27",span=diff(x0,TEST2);
+  const x=iso=>L+diff(x0,iso)/span*pw;
+  const y=v=>T+(705-Math.max(505,Math.min(705,v)))/200*ph;
+  let s="";
+  [505,555,605,655,705].forEach(v=>{s+='<line class="grid" x1="'+L+'" x2="'+(W-R)+'" y1="'+y(v)+'" y2="'+y(v)+'"/><text class="ax" x="'+(L-8)+'" y="'+(y(v)+4)+'" text-anchor="end">'+v+'</text>';});
+  [["2026-10-01","Oct"],["2026-11-01","Nov"],["2026-12-01","Dec"],["2027-01-01","Jan"]].forEach(m=>{s+='<text class="ax" x="'+x(m[0])+'" y="'+(H-8)+'" text-anchor="middle">'+m[1]+'</text>';});
+  [[TEST1,"Test 1"],[TEST2,"Test 2"]].forEach(t=>{s+='<line class="testln" x1="'+x(t[0])+'" x2="'+x(t[0])+'" y1="'+T+'" y2="'+(T+ph)+'"/><text class="testtx" x="'+(x(t[0])-4)+'" y="'+(T+ph-6)+'" text-anchor="end">'+t[1]+'</text>';});
+  s+='<line class="goal" x1="'+L+'" x2="'+(W-R)+'" y1="'+y(675)+'" y2="'+y(675)+'"/><text class="goaltx" x="'+(L+6)+'" y="'+(y(675)-6)+'">675 goal</text>';
+  s+='<polyline class="pace" points="'+PACEPTS.map(p=>x(p[0])+","+y(p[1])).join(" ")+'"/>';
+  PACEPTS.slice(1).forEach(p=>{s+='<circle class="pacept" cx="'+x(p[0])+'" cy="'+y(p[1])+'" r="3.5"/><text class="pacetx" x="'+x(p[0])+'" y="'+(y(p[1])+16)+'" text-anchor="middle">'+p[1]+'</text>';});
+  const act=[["2026-09-27",515]].concat(Object.keys(state.scores).filter(k=>byKey[k]).sort().map(k=>[k,state.scores[k]]));
+  if(act.length>1)s+='<polyline class="act" points="'+act.map(p=>x(p[0])+","+y(p[1])).join(" ")+'"/>';
+  act.forEach(p=>{s+='<circle class="actpt" cx="'+x(p[0])+'" cy="'+y(p[1])+'" r="4.5"/><text class="acttx" x="'+x(p[0])+'" y="'+(y(p[1])-10)+'" text-anchor="middle">'+p[1]+'</text>';});
+  document.getElementById("chart").innerHTML=s;
+}
+function update(){
+  document.querySelectorAll("input.chk").forEach(c=>{c.checked=!!state.done[c.dataset.key];});
+  document.querySelectorAll(".day[data-key]").forEach(r=>r.classList.toggle("is-done",!!state.done[r.dataset.key]));
+  document.querySelectorAll("input.score-in").forEach(i=>{if(document.activeElement!==i){const v=state.scores[i.dataset.key];i.value=v==null?"":v;}});
+  const weeks=[{num:0,days:[SETUP]}].concat(WEEKS);
+  weeks.forEach(w=>{
+    const n=w.days.filter(d=>state.done[d.key]).length;
+    const t=document.querySelector('[data-ticks="'+w.num+'"]');
+    if(t)t.innerHTML=w.days.map(d=>'<i class="k-'+d.kind+(state.done[d.key]?" on":"")+'" title="'+esc(fmt(d.key,{weekday:"short"})+": "+d.title)+'"></i>').join("");
+    const c=document.querySelector('[data-wc="'+w.num+'"]');if(c)c.textContent=n+"/"+w.days.length;
+  });
+  const done=ALL.filter(d=>state.done[d.key]);
+  document.getElementById("st-done").innerHTML=done.length+' <small>/ '+ALL.length+'</small>';
+  document.getElementById("st-hours").textContent=(done.reduce((s,d)=>s+mins(d),0)/60).toFixed(1);
+  const d1=diff(TODAY,TEST1),d2=diff(TODAY,TEST2);
+  if(d1>=0){document.getElementById("st-test-l").textContent="Days to Test 1";document.getElementById("st-test").textContent=d1;}
+  else{document.getElementById("st-test-l").textContent="Days to Test 2";document.getElementById("st-test").textContent=Math.max(0,d2);}
+  const ks=Object.keys(state.scores).filter(k=>byKey[k]).sort();
+  document.getElementById("st-score").textContent=ks.length?state.scores[ks[ks.length-1]]:"515";
+  drawChart();
+}
+
+/* ---------- saving ---------- */
+const saveEl=document.getElementById("save"),saveT=document.getElementById("save-t");
+function setSave(s){saveEl.dataset.s=s;saveT.textContent={saved:"Saved to this page",saving:"Saving…",local:"Saving in this browser only","local-err":"Couldn't save to the page. Your checkmarks are kept in this browser."}[s];}
+let ref=null,saving=false,dirty=false;
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+async function persist(){
+  mirror();
+  if(!ref)return;
+  dirty=true;if(saving)return;
+  saving=true;setSave("saving");
+  while(dirty&&ref){
+    dirty=false;
+    const body=JSON.parse(JSON.stringify(state));
+    try{await ref.set(body);}
+    catch(e){
+      if(e&&e.code==="unavailable"){await sleep(600+Math.random()*800);try{await ref.set(body);continue;}catch(e2){}}
+      ref=null;setSave("local-err");
+    }
+  }
+  saving=false;if(ref)setSave("saved");
+}
+document.addEventListener("change",e=>{
+  const t=e.target;
+  if(t.classList.contains("chk")){const k=t.dataset.key;if(t.checked)state.done[k]=true;else delete state.done[k];update();persist();}
+  else if(t.classList.contains("score-in")){
+    const k=t.dataset.key,raw=t.value.trim(),v=parseInt(raw,10);
+    if(raw===""){delete state.scores[k];}
+    else if(!isNaN(v)&&v>=205&&v<=805){state.scores[k]=v;}
+    else{t.value=state.scores[k]==null?"":state.scores[k];return;}
+    update();persist();
+  }
+});
+
+renderPlan();renderToday();update();
+document.getElementById("fig-hours").textContent=Math.round(ALL.filter(d=>d.key>="2026-09-28"&&d.key<TEST1).reduce((s,d)=>s+mins(d),0)/60)+" h";
+setSave("local");
+
+(async()=>{
+  let db=null;
+  try{db=window.claude&&window.claude.use?await window.claude.use("db"):null;}catch(e){db=null;}
+  if(!db){setSave("local");return;}
+  const r=db.doc("progress/main");
+  try{
+    const snap=await r.get();
+    if(snap.exists){const d=snap.data()||{};state={done:Object.assign({},d.done||{}),scores:Object.assign({},d.scores||{})};mirror();update();}
+    ref=r;setSave("saved");
+    if(!snap.exists&&(Object.keys(state.done).length||Object.keys(state.scores).length))persist();
+    r.onSnapshot(s=>{
+      if(saving||dirty||!s.exists||s.metadata.hasPendingWrites)return;
+      const d=s.data()||{};state={done:Object.assign({},d.done||{}),scores:Object.assign({},d.scores||{})};mirror();update();
+    },()=>{});
+  }catch(e){ref=null;setSave("local");}
+})();
+})();
+</script>
+
+</body>
+</html>
