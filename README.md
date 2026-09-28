@@ -18,4 +18,6 @@ Progress saves in your browser (localStorage). Use the backup code on the Progre
 
 ## Materials
 
-Target Test Prep (Quant and Data Insights), GMAT Official Guide 2026–2027, Official Practice Exams on mba.com, and the GMAT Club forum for explanations.
+- **Owned:** [GMAT Official Guide 2026–2027 Bundle](https://www.amazon.com/dp/1394414951): Official Guide plus the Quantitative, Verbal, and Data Insights Reviews, each with a one-time code for the online question bank ([access instructions](https://support.mba.com/hc/en-us/articles/52031938654875-Accessing-GMAT-and-EA-Prep-Products))
+- **To get:** [Target Test Prep](https://gmat.targettestprep.com/plans) for Quant and Data Insights lessons; [Official Practice Exams 3 to 6](https://www.mba.com/exam-prep/gmat-official-practice-exams-3-6) before Nov 14
+- **Free:** [Official Practice Exams 1 and 2](https://www.mba.com/exam-prep/gmat-official-starter-kit-practice-exams-1-and-2-free) and the [GMAT Club forum](https://gmatclub.com/forum/) for explanations

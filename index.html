@@ -258,8 +258,22 @@ th.n{text-align:right}
 .dates li:first-child{border-top:0}
 .dates .dd{font:500 13px var(--mono)}
 .dates li.past{opacity:.5}
+.kit{display:flex;flex-direction:column;gap:18px}
+.own{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:10px}
+.own p{font-size:14px;color:var(--muted);max-width:72ch}
+.own .todo{color:var(--ink);background:color-mix(in srgb,var(--accent) 8%,transparent);border-radius:8px;padding:10px 12px}
+.kh{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.kh h3{font-size:17px;font-weight:600}
+.kh h3 a{color:var(--ink);text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--accent) 55%,transparent);text-underline-offset:3px}
+.tag{font:500 10.5px/1 var(--mono);text-transform:uppercase;letter-spacing:.07em;padding:4px 7px;border-radius:4px;white-space:nowrap}
+.tag.have{background:var(--done);color:var(--accent-ink)}
+.tag.get{background:color-mix(in srgb,var(--q) 15%,transparent);color:var(--q)}
+.tag.free{background:color-mix(in srgb,var(--accent) 13%,transparent);color:var(--accent)}
+.books{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}
+.books li{display:flex;flex-direction:column;gap:2px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;color:var(--muted)}
+.books b{font:600 15px var(--display);color:var(--ink)}
 .res{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 32px}
-.res div{padding:12px 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:4px}
+.res > div{padding:12px 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:4px}
 .res h3{font-size:16.5px;font-weight:600}
 .res p{color:var(--muted);font-size:14px}
 .facts{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;max-width:72ch}
@@ -408,11 +422,25 @@ th.n{text-align:right}
     </div>
     <div class="sec">
       <h2>What to use</h2>
-      <div class="res">
-        <div><h3>Target Test Prep (Quant and Data Insights)</h3><p>Your main course; the Quant topics here follow its chapters. $249 a month, or $799 for 4 months (which covers you through Jan 23 for less). Free 5-day trial. Prices as of Sep 2026.</p></div>
-        <div><h3>GMAT Official Guide 2026–2027</h3><p>Real retired questions for timed sets and all Verbal work. Use the online question bank to build custom timed sets.</p></div>
-        <div><h3>Official Practice Exams (mba.com)</h3><p>Exams 1 and 2 are free in the Official Starter Kit; 3 to 6 are sold together. This plan assumes your diagnostic was Exam 1. If it wasn't, take Exam 1 on Oct 24.</p></div>
-        <div><h3>GMAT Club forum</h3><p>Free expert explanations for nearly every OG question. Search the first line of a question to find its thread.</p></div>
+      <p class="lead">Status as of Sep 27. Every item links to its source.</p>
+      <div class="kit">
+        <div class="own">
+          <div class="kh"><span class="tag have">Owned</span><h3><a href="https://www.amazon.com/dp/1394414951" target="_blank" rel="noopener">GMAT Official Guide 2026–2027 Bundle</a></h3></div>
+          <p>Four print books from GMAC with 1,800+ real retired questions, plus 300+ more that only appear in the online question bank. <a href="https://bookpal.com/gmat-official-guide-2026-2027-bundle-9781394414956/" target="_blank" rel="noopener">Bundle contents</a> · <a href="https://www.wiley.com/en-us/gmat-official-guide-2026-2027-bundle-books-online-question-bank-p-9781394414956" target="_blank" rel="noopener">Publisher listing</a></p>
+          <ul class="books">
+            <li><b>Official Guide</b><span>Mixed Quant, Verbal, and Data Insights. Use it for Saturday timed sections and the mixed sets in Phases 3 and 4.</span></li>
+            <li><b>Quantitative Review</b><span>Extra Quant questions by topic. Pull Tuesday timed sets and repair-day drills from here.</span></li>
+            <li><b>Verbal Review</b><span>Extra Critical Reasoning and Reading Comprehension. Your Friday practice source.</span></li>
+            <li><b>Data Insights Review</b><span>Extra DS, Table Analysis, Graphics, Two-Part, and Multi-Source questions. Your Wednesday practice source.</span></li>
+          </ul>
+          <p class="todo"><b>Do this first:</b> each book has its own one-time access code. Redeem all four in your mba.com account to unlock the online question bank, where you can build timed sets by topic and difficulty. Access runs 12 months from activation, which covers Jan 23. <a href="https://support.mba.com/hc/en-us/articles/52031938654875-Accessing-GMAT-and-EA-Prep-Products" target="_blank" rel="noopener">GMAC access instructions</a></p>
+        </div>
+        <div class="res">
+          <div><div class="kh"><span class="tag get">To get</span><h3><a href="https://gmat.targettestprep.com/plans" target="_blank" rel="noopener">Target Test Prep</a></h3></div><p>Your lesson source for Quant and Data Insights; the Monday and Thursday topics follow its chapters. $249 a month, or $799 for 4 months, which covers you through Jan 23 for less. Start with the free 5-day trial. Prices as of Sep 2026.</p></div>
+          <div><div class="kh"><span class="tag free">Free</span><h3><a href="https://www.mba.com/exam-prep/gmat-official-starter-kit-practice-exams-1-and-2-free" target="_blank" rel="noopener">Official Practice Exams 1 and 2</a></h3></div><p>Part of the free Official Starter Kit. This plan assumes your diagnostic was Exam 1 and puts Exam 2 on Oct 24. If your diagnostic wasn't Exam 1, take Exam 1 on Oct 24.</p></div>
+          <div><div class="kh"><span class="tag get">To get by Nov 14</span><h3><a href="https://www.mba.com/exam-prep/gmat-official-practice-exams-3-6" target="_blank" rel="noopener">Official Practice Exams 3 to 6</a></h3></div><p>Sold together on mba.com. They're scheduled for Nov 14, Dec 5, Dec 19, and Dec 26, so buy them before Nov 14.</p></div>
+          <div><div class="kh"><span class="tag free">Free</span><h3><a href="https://gmatclub.com/forum/" target="_blank" rel="noopener">GMAT Club forum</a></h3></div><p>Expert explanations for nearly every Official Guide question. Search the first line of a question to find its thread.</p></div>
+        </div>
       </div>
     </div>
   </section>
@@ -425,9 +453,9 @@ th.n{text-align:right}
 const S=(kind,title,blocks,extra)=>Object.assign({kind,title,blocks},extra||{});
 const LOG=["Log",15,"Error log every miss: topic, why you missed it (concept, careless, or timing), and the fix."];
 const QL=t=>S("quant",t,[["Learn",35,"TTP Quant lessons on this topic."],["Drill",40,"15 to 20 TTP questions, untimed. Write out every step."],LOG],{mode:"learn"});
-const QP=t=>S("quant",t,[["Warm-up",10,"Redo 5 misses from yesterday without looking at your old work."],["Timed",45,"20 questions on this topic at 2 minutes each, mixing OG Quant and TTP."],["Review",35,"Review every question, lucky guesses included. Log each miss."]],{mode:"timed"});
-const DI=t=>S("di",t,[["Learn",30,"TTP Data Insights lessons on this question type."],["Practice",45,"12 to 15 OG Data Insights questions of this type."],["Log",15,"Log misses. On Data Sufficiency, note whether you misjudged statement 1, statement 2, or the combination."]]);
-const VB=t=>S("verbal",t,[["Method",25,"Learn the approach from the OG explanations. Use GMAT Club threads for the hard ones."],["Practice",50,"12 to 15 OG Verbal questions of this type."],["Review",15,"For each miss, write one line on why the right answer wins and one on why yours loses."]]);
+const QP=t=>S("quant",t,[["Warm-up",10,"Redo 5 misses from yesterday without looking at your old work."],["Timed",45,"20 questions on this topic at 2 minutes each from the Quantitative Review (filter by topic in the online bank)."],["Review",35,"Review every question, lucky guesses included. Log each miss."]],{mode:"timed"});
+const DI=t=>S("di",t,[["Learn",30,"TTP Data Insights lessons on this question type."],["Practice",45,"12 to 15 questions of this type from the Data Insights Review."],["Log",15,"Log misses. On Data Sufficiency, note whether you misjudged statement 1, statement 2, or the combination."]]);
+const VB=t=>S("verbal",t,[["Method",25,"Learn the approach from the OG explanations. Use GMAT Club threads for the hard ones."],["Practice",50,"12 to 15 questions of this type from the Verbal Review."],["Review",15,"For each miss, write one line on why the right answer wins and one on why yours loses."]]);
 const TS=(sec,d)=>S("timed","Timed "+sec+" section",[["Timed",45,d],["Review",45,"Review all of it. Log misses and any question that took over 3 minutes."]],{mode:sec});
 const MOCK=(n,t)=>S("mock","Official Practice Exam "+n,[["Exam",135,"Full test conditions: one sitting, only the 10-minute break, same time of day you'll test."]],{score:true,target:t,note:"<b>Pace marker for 675: "+t+"+.</b> This session runs about 45 minutes long."});
 const MREV=(n,note)=>S("review","Review Practice Exam "+n,[["Report",20,"Read the score report: accuracy by topic and time per question."],["Rework",55,"Rework every miss and every guess, then log them."],["Adjust",15,"Name your 3 weakest topics. They get the repair days next week."]],note?{note}:{});
@@ -455,7 +483,7 @@ const THARD=()=>S("target","Target section: hard set",[["Timed",30,"12 to 15 har
 const MAINT=()=>S("mixed","Keep the other two sections warm",[["Section A",40,"10 mixed questions from your stronger math section, then review."],["Section B",35,"8 mixed questions from the other non-target section, then review."],["Flashcards",15,"Formulas and rules."]]);
 const TPMOCK=()=>S("mock","Full-length third-party mock",[["Exam",135,"A full test from TTP, e-GMAT, or GMAT Club. Your six official exams are used up."]],{score:true,note:"Third-party scoring can differ from the official scale. Watch your target section's trend more than the total."});
 const TPREV=()=>S("review","Review the mock",[["Rework",60,"Rework every miss and guess in your target section first, then the others."],["Adjust",30,"Update your error log and pick next week's two repair topics."]]);
-const SETUP=S("setup","Set up your prep",[["Report",30,"Open the diagnostic's score report: which Quant topics and question types you missed, and your time per section."],["Buy",20,"Get the OG 2026–2027 (with the online question bank) and start the Target Test Prep free trial."],["Book",20,"Register for Saturday, Jan 2 at mba.com so the date is real."],["Log",20,"Build your error log: date, source, section, topic, why missed, fix."]]);
+const SETUP=S("setup","Set up your prep",[["Report",30,"Open the diagnostic's score report: which Quant topics and question types you missed, and your time per section."],["Buy",20,"Redeem the access code in each of your 4 Official Guide books at mba.com, then start the Target Test Prep free trial."],["Book",20,"Register for Saturday, Jan 2 at mba.com so the date is real."],["Log",20,"Build your error log: date, source, section, topic, why missed, fix."]]);
 
 const std=(qa,qb,di,vb,sat,sun)=>[QL(qa),QP(qa),DI(di),QL(qb),VB(vb),sat,sun||REV()];
 const FINALS="BYU finals run Dec 7 to 18. These weeks use short mixed sets that keep your skills warm without new learning.";
