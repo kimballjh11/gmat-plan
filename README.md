@@ -4,16 +4,18 @@ A day-by-day GMAT Focus Edition study plan: 90 minutes a day from Sep 27, 2026 t
 
 **Live page:** https://kimballjh11.github.io/gmat-plan/
 
-## What's in it
+## Tabs
 
-- **Today view** with the day's session broken into timed blocks
-- **17 weeks in five phases:** Foundations, Build, Speed, Peak, Retake
-- **Weekly rhythm:** Quant learn (Mon), Quant timed (Tue), Data Insights (Wed), Quant learn (Thu), Verbal (Fri), timed section or practice exam (Sat), review (Sun)
-- **Official Practice Exam checkpoints** on Oct 24, Nov 14, Dec 5, Dec 19, Dec 26, each with a pace target for 675
-- **Score chart** that plots logged practice exam scores against that pace
+- **Today:** the day's session with a checkbox for every block, session notes, streak, days behind, and a catch-up list of missed sessions
+- **Week:** the current week's seven sessions, with arrows to move between weeks
+- **Plan:** all 17 weeks in five phases (Foundations, Build, Speed, Peak, Retake)
+- **Progress:** streaks, on-time rate, a day-by-day heatmap, hours by section, the score path against the 675 pace, and a backup code for moving progress between devices
+- **Guide:** the reality check, weekly rhythm, key dates, session rules, test rules, and materials
 
-Checkmarks and scores save in your browser (localStorage), so they stay on the device you use.
+Official Practice Exams fall on Oct 24, Nov 14, Dec 5, Dec 19, and Dec 26. The weeks of BYU finals (Dec 7 to 18) use short maintenance sets.
+
+Progress saves in your browser (localStorage). Use the backup code on the Progress tab to move it to another device.
 
 ## Materials
 
-Target Test Prep (Quant and Data Insights), GMAT Official Guide 2025–2026, Official Practice Exams on mba.com, and the GMAT Club forum for explanations.
+Target Test Prep (Quant and Data Insights), GMAT Official Guide 2026–2027, Official Practice Exams on mba.com, and the GMAT Club forum for explanations.
