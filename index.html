@@ -272,6 +272,16 @@ th.n{text-align:right}
 .books{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}
 .books li{display:flex;flex-direction:column;gap:2px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;color:var(--muted)}
 .books b{font:600 15px var(--display);color:var(--ink)}
+.ai{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:10px}
+.ai > p{font-size:14px;color:var(--muted);max-width:74ch}
+.prompts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px}
+.pr{border:1px solid var(--line);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:6px;background:var(--bg)}
+.prh{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.prh b{font:600 14.5px var(--display)}
+.pr p{font:13px/1.5 var(--mono);color:var(--ink)}
+.copymsg{font:12px var(--mono);color:var(--done);min-height:1em}
+.fallback{font-size:14px;color:var(--muted);max-width:74ch;border-left:2px solid var(--q);padding-left:12px}
+.fallback b{color:var(--ink)}
 .res{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 32px}
 .res > div{padding:12px 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:4px}
 .res h3{font-size:16.5px;font-weight:600}
@@ -375,7 +385,7 @@ th.n{text-align:right}
       <h2>What 90 minutes a day buys you</h2>
       <div class="figs">
         <div class="figure"><span class="v" id="fig-hours">— h</span><span class="l">of study before Test 1</span></div>
-        <div class="figure"><span class="v">240–360 h</span><span class="l">typical for a 100 to 150 point gain (TTP estimate)</span></div>
+        <div class="figure"><span class="v">240–360 h</span><span class="l">typical for a 100 to 150 point gain (prep company estimate)</span></div>
         <div class="figure"><span class="v">+160</span><span class="l">points you need</span></div>
       </div>
       <div class="prose">
@@ -387,7 +397,7 @@ th.n{text-align:right}
       <h2>The weekly shape</h2>
       <p class="lead">Quant is your weakest section (20th percentile) and Data Insights uses the same math, so about half the time goes there. From Phase 3 the learning days become full timed sections.</p>
       <div class="rhythm">
-        <div class="rd k-quant"><span class="dn">Mon</span><span class="rl">Quant · learn</span><span class="rt">New topic: TTP lesson and drills</span></div>
+        <div class="rd k-quant"><span class="dn">Mon</span><span class="rl">Quant · learn</span><span class="rt">New topic: book review, video, drills</span></div>
         <div class="rd k-quant"><span class="dn">Tue</span><span class="rl">Quant · timed</span><span class="rt">Timed set on Monday's topic</span></div>
         <div class="rd k-di"><span class="dn">Wed</span><span class="rl">Data Insights</span><span class="rt">One question type per week</span></div>
         <div class="rd k-quant"><span class="dn">Thu</span><span class="rl">Quant · learn</span><span class="rt">Second topic of the week</span></div>
@@ -436,11 +446,25 @@ th.n{text-align:right}
           <p class="todo"><b>Do this first:</b> each book has its own one-time access code. Redeem all four in your mba.com account to unlock the online question bank, where you can build timed sets by topic and difficulty. Access runs 12 months from activation, which covers Jan 23. <a href="https://support.mba.com/hc/en-us/articles/52031938654875-Accessing-GMAT-and-EA-Prep-Products" target="_blank" rel="noopener">GMAC access instructions</a></p>
         </div>
         <div class="res">
-          <div><div class="kh"><span class="tag get">To get</span><h3><a href="https://gmat.targettestprep.com/plans" target="_blank" rel="noopener">Target Test Prep</a></h3></div><p>Your lesson source for Quant and Data Insights; the Monday and Thursday topics follow its chapters. $249 a month, or $799 for 4 months, which covers you through Jan 23 for less. Start with the free 5-day trial. Prices as of Sep 2026.</p></div>
+          <div><div class="kh"><span class="tag free">Free</span><h3><a href="https://www.gmatninja.com/gmat/free-gmat-course-online/" target="_blank" rel="noopener">GMAT Ninja free course</a></h3></div><p>Your video lessons for Quant, Critical Reasoning, Reading Comprehension, and Data Insights, built for the current exam. No signup. Use it on learning days when the book's review chapter isn't enough.</p></div>
+          <div><div class="kh"><span class="tag free">Free</span><h3><a href="https://www.khanacademy.org/math/algebra-basics" target="_blank" rel="noopener">Khan Academy</a></h3></div><p>For rebuilding fundamentals behind a 20th percentile Quant score: <a href="https://www.khanacademy.org/math/algebra-basics" target="_blank" rel="noopener">algebra basics</a> and <a href="https://www.khanacademy.org/math/statistics-probability" target="_blank" rel="noopener">statistics and probability</a>. Short videos with practice.</p></div>
+          <div><div class="kh"><span class="tag free">Free</span><h3><a href="https://www.kaptest.com/gmat/free/gmat-practice-test-options" target="_blank" rel="noopener">Manhattan Prep and Kaplan practice tests</a></h3></div><p>One free full-length adaptive test from each. Used in the retake weeks after your six official exams run out. Third-party scores can run high or low, so watch section trends.</p></div>
           <div><div class="kh"><span class="tag free">Free</span><h3><a href="https://www.mba.com/exam-prep/gmat-official-starter-kit-practice-exams-1-and-2-free" target="_blank" rel="noopener">Official Practice Exams 1 and 2</a></h3></div><p>Part of the free Official Starter Kit. This plan assumes your diagnostic was Exam 1 and puts Exam 2 on Oct 24. If your diagnostic wasn't Exam 1, take Exam 1 on Oct 24.</p></div>
           <div><div class="kh"><span class="tag get">To get by Nov 14</span><h3><a href="https://www.mba.com/exam-prep/gmat-official-practice-exams-3-6" target="_blank" rel="noopener">Official Practice Exams 3 to 6</a></h3></div><p>Sold together on mba.com. They're scheduled for Nov 14, Dec 5, Dec 19, and Dec 26, so buy them before Nov 14.</p></div>
           <div><div class="kh"><span class="tag free">Free</span><h3><a href="https://gmatclub.com/forum/" target="_blank" rel="noopener">GMAT Club forum</a></h3></div><p>Expert explanations for nearly every Official Guide question. Search the first line of a question to find its thread.</p></div>
         </div>
+      <div class="ai">
+        <div class="kh"><span class="tag free">Free</span><h3>Claude as your tutor</h3></div>
+        <p>AI fills the teaching role a paid course would. Use it to explain misses, reteach a rule, and spot patterns in your error log. Two rules: try every problem yourself before asking, and check its math against the official explanation, because AI can make arithmetic mistakes. For timed practice, use real Official Guide questions, not AI-written ones, since AI questions aren't calibrated to GMAT difficulty.</p>
+        <div class="prompts">
+          <div class="pr"><div class="prh"><b>After a miss</b><button class="linkbtn" data-copy="pr1">Copy</button></div><p id="pr1">I'm studying for the GMAT. Here's a question I got wrong: [paste question]. I answered [X]; the correct answer is [Y]. Don't give me the solution. Ask me one guiding question at a time until I find my mistake, then show me the fastest valid method.</p></div>
+          <div class="pr"><div class="prh"><b>Reteach a topic</b><button class="linkbtn" data-copy="pr2">Copy</button></div><p id="pr2">Teach me [topic] for GMAT Quant in about 10 minutes: the key rules, one worked example, and the common traps. Then give me 5 practice problems of rising difficulty, one at a time, and wait for my answer before checking it.</p></div>
+          <div class="pr"><div class="prh"><b>Sunday error log review</b><button class="linkbtn" data-copy="pr3">Copy</button></div><p id="pr3">Here is my GMAT error log for this week: [paste]. Group my misses by topic and by cause (concept, careless, or timing). Name the 3 patterns costing me the most points and tell me what to drill next week.</p></div>
+          <div class="pr"><div class="prh"><b>Verbal miss</b><button class="linkbtn" data-copy="pr4">Copy</button></div><p id="pr4">Here's a Critical Reasoning question I missed: [paste]. Identify the conclusion, the evidence, and the gap in the argument. Then explain why the correct answer is right and why each wrong answer fails.</p></div>
+        </div>
+        <p class="copymsg" id="copymsg" aria-live="polite"></p>
+      </div>
+      <p class="fallback"><b>If Quant stalls:</b> check your Quant section score on Practice Exam 3 (Nov 14). If it hasn't moved past about 76, one month of <a href="https://gmat.targettestprep.com/plans" target="_blank" rel="noopener">Target Test Prep</a> ($249, prices as of Sep 2026) is the upgrade most worth paying for. It has a free 5-day trial if you want to preview it first.</p>
       </div>
     </div>
   </section>
@@ -452,20 +476,20 @@ th.n{text-align:right}
 /* ---------- plan data ---------- */
 const S=(kind,title,blocks,extra)=>Object.assign({kind,title,blocks},extra||{});
 const LOG=["Log",15,"Error log every miss: topic, why you missed it (concept, careless, or timing), and the fix."];
-const QL=t=>S("quant",t,[["Learn",35,"TTP Quant lessons on this topic."],["Drill",40,"15 to 20 TTP questions, untimed. Write out every step."],LOG],{mode:"learn"});
+const QL=t=>S("quant",t,[["Learn",35,"Read this topic in the Quant Review's math review chapter. Watch a GMAT Ninja or Khan Academy video on any rule that doesn't click, then have Claude quiz you with 5 quick concept checks."],["Drill",40,"15 to 20 Quant Review questions on this topic, untimed. Write out every step."],LOG],{mode:"learn"});
 const QP=t=>S("quant",t,[["Warm-up",10,"Redo 5 misses from yesterday without looking at your old work."],["Timed",45,"20 questions on this topic at 2 minutes each from the Quantitative Review (filter by topic in the online bank)."],["Review",35,"Review every question, lucky guesses included. Log each miss."]],{mode:"timed"});
-const DI=t=>S("di",t,[["Learn",30,"TTP Data Insights lessons on this question type."],["Practice",45,"12 to 15 questions of this type from the Data Insights Review."],["Log",15,"Log misses. On Data Sufficiency, note whether you misjudged statement 1, statement 2, or the combination."]]);
+const DI=t=>S("di",t,[["Learn",30,"Read the Data Insights Review's introduction to this question type and watch the matching GMAT Ninja lesson."],["Practice",45,"12 to 15 questions of this type from the Data Insights Review."],["Log",15,"Log misses. On Data Sufficiency, note whether you misjudged statement 1, statement 2, or the combination."]]);
 const VB=t=>S("verbal",t,[["Method",25,"Learn the approach from the OG explanations. Use GMAT Club threads for the hard ones."],["Practice",50,"12 to 15 questions of this type from the Verbal Review."],["Review",15,"For each miss, write one line on why the right answer wins and one on why yours loses."]]);
 const TS=(sec,d)=>S("timed","Timed "+sec+" section",[["Timed",45,d],["Review",45,"Review all of it. Log misses and any question that took over 3 minutes."]],{mode:sec});
 const MOCK=(n,t)=>S("mock","Official Practice Exam "+n,[["Exam",135,"Full test conditions: one sitting, only the 10-minute break, same time of day you'll test."]],{score:true,target:t,note:"<b>Pace marker for 675: "+t+"+.</b> This session runs about 45 minutes long."});
 const MREV=(n,note)=>S("review","Review Practice Exam "+n,[["Report",20,"Read the score report: accuracy by topic and time per question."],["Rework",55,"Rework every miss and every guess, then log them."],["Adjust",15,"Name your 3 weakest topics. They get the repair days next week."]],note?{note}:{});
-const REV=()=>S("review","Weekly review",[["Redo",40,"Redo every miss you logged this week, cold."],["Reading",30,"One timed Reading Comprehension passage (about 7 minutes), then review it closely."],["Flashcards",20,"Formulas and rules: exponent laws, divisibility, percent change, the DS answer grid."]]);
+const REV=()=>S("review","Weekly review",[["Redo",40,"Redo every miss you logged this week, cold. Then paste the week's error log into Claude and ask for your 3 costliest patterns."],["Reading",30,"One timed Reading Comprehension passage (about 7 minutes), then review it closely."],["Flashcards",20,"Formulas and rules: exponent laws, divisibility, percent change, the DS answer grid."]]);
 const QSEC=()=>S("quant","Full Quant section",[["Timed",45,"21 mixed Quant questions in 45 minutes (about 2:08 each)."],["Review",45,"Review all 21. Log misses and anything over 3 minutes."]],{mode:"section"});
 const DISEC=()=>S("di","Full Data Insights section",[["Timed",45,"20 mixed DI questions in 45 minutes (about 2:15 each)."],["Review",45,"Review all 20. Log misses by question type."]],{mode:"section"});
 const VSEC=()=>S("verbal","Full Verbal section",[["Timed",45,"23 mixed Verbal questions in 45 minutes (about 1:57 each)."],["Review",45,"Review all 23. Log misses by question type."]],{mode:"section"});
-const WEAK=(k,l)=>S(k,"Weakest "+l+" topics",[["Pick",5,"Pull the 2 topics with the most misses in your error log."],["Relearn",30,"Reread the TTP lessons or OG explanations for those topics."],["Drill",40,"15 questions on those topics at 2 minutes each."],LOG],{mode:"repair"});
+const WEAK=(k,l)=>S(k,"Weakest "+l+" topics",[["Pick",5,"Pull the 2 topics with the most misses in your error log."],["Relearn",30,"Reread the math review sections or official explanations for those topics, or ask Claude to reteach them."],["Drill",40,"15 questions on those topics at 2 minutes each."],LOG],{mode:"repair"});
 const PACE=()=>S("quant","Pacing and guessing",[["Rule",10,"Set your cutoff: no plan by 1:30 means guess, bookmark, and move on."],["Sets",60,"Three sets of 7 mixed Quant questions, 15 minutes each. Guess on purpose when you hit the cutoff."],["Edits",20,"Practice the review screen: decide which bookmarked questions deserve your 3 answer changes."]],{mode:"strategy"});
-const HARDQ=()=>S("quant","Hard Quant set",[["Timed",30,"15 hard mixed TTP Quant questions in 30 minutes."],["Rework",45,"Redo every miss from scratch before reading the solution."],LOG],{mode:"hard"});
+const HARDQ=()=>S("quant","Hard Quant set",[["Timed",30,"15 hard mixed Quant questions in 30 minutes (online bank filtered to hard)."],["Rework",45,"Redo every miss from scratch before reading the solution."],LOG],{mode:"hard"});
 const HARDDI=()=>S("di","Hard Multi-Source and Two-Part",[["Timed",35,"10 hard MSR and Two-Part Analysis questions."],["Review",40,"Review and log. Note where you lost time switching tabs."],["Flashcards",15,"DS answer grid and table-sorting shortcuts."]],{mode:"hard"});
 const HARDCR=()=>S("verbal","Hard Critical Reasoning",[["Timed",30,"12 hard CR questions at 2 minutes each."],["Review",45,"For each, name the argument's gap before rereading the answers."],["Reading",15,"One RC passage, timed."]],{mode:"hard"});
 const MIX=(k,l,n)=>S(k,"Short mixed "+l+" set",[["Timed",25,n+" mixed "+l+" questions."],["Review",50,"Review every question and log misses."],["Flashcards",15,"Formulas and rules."]],{mode:"finals"});
@@ -481,9 +505,9 @@ const TW=()=>S("target","Target section: weakest topics",[["Pick",5,"Pull the 2 
 const TSEC=()=>S("target","Target section: full timed section",[["Timed",45,"One full section in your target area under real timing."],["Review",45,"Review everything and log misses."]]);
 const THARD=()=>S("target","Target section: hard set",[["Timed",30,"12 to 15 hard questions from your target section."],["Rework",45,"Redo misses from scratch before reading solutions."],LOG]);
 const MAINT=()=>S("mixed","Keep the other two sections warm",[["Section A",40,"10 mixed questions from your stronger math section, then review."],["Section B",35,"8 mixed questions from the other non-target section, then review."],["Flashcards",15,"Formulas and rules."]]);
-const TPMOCK=()=>S("mock","Full-length third-party mock",[["Exam",135,"A full test from TTP, e-GMAT, or GMAT Club. Your six official exams are used up."]],{score:true,note:"Third-party scoring can differ from the official scale. Watch your target section's trend more than the total."});
+const TPMOCK=()=>S("mock","Full-length third-party mock",[["Exam",135,"A free full-length test from Manhattan Prep or Kaplan. Your six official exams are used up by now."]],{score:true,note:"Third-party scoring can differ from the official scale. Watch your target section's trend more than the total."});
 const TPREV=()=>S("review","Review the mock",[["Rework",60,"Rework every miss and guess in your target section first, then the others."],["Adjust",30,"Update your error log and pick next week's two repair topics."]]);
-const SETUP=S("setup","Set up your prep",[["Report",30,"Open the diagnostic's score report: which Quant topics and question types you missed, and your time per section."],["Buy",20,"Redeem the access code in each of your 4 Official Guide books at mba.com, then start the Target Test Prep free trial."],["Book",20,"Register for Saturday, Jan 2 at mba.com so the date is real."],["Log",20,"Build your error log: date, source, section, topic, why missed, fix."]]);
+const SETUP=S("setup","Set up your prep",[["Report",30,"Open the diagnostic's score report: which Quant topics and question types you missed, and your time per section."],["Buy",20,"Redeem the access code in each of your 4 Official Guide books at mba.com, and bookmark the free lesson sources in the Guide tab."],["Book",20,"Register for Saturday, Jan 2 at mba.com so the date is real."],["Log",20,"Build your error log: date, source, section, topic, why missed, fix."]]);
 
 const std=(qa,qb,di,vb,sat,sun)=>[QL(qa),QP(qa),DI(di),QL(qb),VB(vb),sat,sun||REV()];
 const FINALS="BYU finals run Dec 7 to 18. These weeks use short mixed sets that keep your skills warm without new learning.";
@@ -493,9 +517,9 @@ const WEEKS=[
   {phase:1,days:std("Inequalities and absolute value","Word problems: rates, work, and distance","Table Analysis","Reading Comprehension: mapping a passage",TS("Data Insights","20 mixed OG Data Insights questions in 45 minutes."))},
   {phase:1,days:std("Number properties: divisibility, primes, factors","Number properties: remainders, odd and even, signs","Graphics Interpretation","Critical Reasoning: find the assumption, evaluate the argument",MOCK(2,555),MREV(2))},
   {phase:2,days:std("Statistics: mean, median, range, standard deviation","Weighted averages and overlapping sets","Two-Part Analysis","Reading Comprehension: main idea and inference",TS("Verbal","23 mixed OG Verbal questions in 45 minutes."))},
-  {phase:2,days:std("Counting: permutations and combinations","Probability","Multi-Source Reasoning","Critical Reasoning: inference, boldface, explain the discrepancy",TS("Quant","21 medium-to-hard OG and TTP Quant questions in 45 minutes."))},
+  {phase:2,days:std("Counting: permutations and combinations","Probability","Multi-Source Reasoning","Critical Reasoning: inference, boldface, explain the discrepancy",TS("Quant","21 medium-to-hard questions from the Official Guide and Quant Review in 45 minutes."))},
   {phase:2,days:std("Mixtures, profit, and interest","Sequences and patterns","Hard Data Sufficiency: number properties","Reading Comprehension: detail and function questions under time",MOCK(3,595),MREV(3))},
-  {phase:2,days:std("Quadratics and factoring","Functions and coordinate geometry: lines and slopes","Mixed Data Insights at medium-to-hard level","Hard Critical Reasoning, mixed types",TS("Data Insights","20 mixed Data Insights questions in 45 minutes, from TTP's harder sets."))},
+  {phase:2,days:std("Quadratics and factoring","Functions and coordinate geometry: lines and slopes","Mixed Data Insights at medium-to-hard level","Hard Critical Reasoning, mixed types",TS("Data Insights","20 mixed Data Insights questions in 45 minutes, from the online bank filtered to hard."))},
   {phase:2,days:[WEAK("quant","Quant"),MIXQ(),WEAK("di","Data Insights"),LIGHT("Thanksgiving: short session",[["Redo",25,"Redo 10 logged misses."],["Flashcards",20,"Formulas and rules."]]),WEAK("verbal","Verbal"),TS("Quant","21 medium-to-hard mixed Quant questions in 45 minutes."),REV()]},
   {phase:3,days:[QSEC(),WEAK("quant","Quant"),DISEC(),PACE(),VSEC(),MOCK(4,625),MREV(4)]},
   {phase:3,note:FINALS,days:[MIX("quant","Quant",10),MIX("di","Data Insights",8),MIX("verbal","Verbal",10),MIX("quant","Quant",10),WEAK("quant","Quant"),QSEC(),REV()]},
@@ -738,6 +762,9 @@ document.addEventListener("click",e=>{
   if(t.dataset.open){viewKey=t.dataset.open;renderToday();renderNext();show("today");return;}
   if(t.dataset.mark){const k=t.dataset.mark;setDay(k,!state.done[k]);refresh();persist();return;}
   if(t.dataset.wgo){const n=viewWeek+(+t.dataset.wgo);if(n>=0&&n<WLIST.length){viewWeek=n;renderWeek();}return;}
+  if(t.dataset.copy){const el=document.getElementById(t.dataset.copy),m=document.getElementById("copymsg");const txt=el.textContent;
+    const sel=()=>{const r=document.createRange();r.selectNodeContents(el);const g=getSelection();g.removeAllRanges();g.addRange(r);m.textContent="Selected. Copy it with your keyboard or long-press.";};
+    try{navigator.clipboard.writeText(txt).then(()=>{m.textContent="Prompt copied.";},sel);}catch(err){sel();}return;}
   if(t.id==="bk-copy"){copyBackup();return;}
   if(t.id==="bk-restore"){restoreBackup();return;}
 });
