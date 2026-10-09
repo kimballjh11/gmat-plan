@@ -1,25 +1,23 @@
-# GMAT 675 Plan
+# ACT 33 and GMAT 675 Plans
 
-A day-by-day GMAT Focus Edition study plan: 90 minutes a day from Sep 27, 2026 through Test 1 on Jan 2, 2027 and a Superscore retake on Jan 23, 2027.
+Two day-by-day study trackers on one site, with an ACT / GMAT switcher at the top of each page.
 
-**Live page:** https://kimballjh11.github.io/gmat-plan/
+**Live page:** https://kimballjh11.github.io/gmat-plan/ (opens the ACT plan; the GMAT plan is at [gmat.html](https://kimballjh11.github.io/gmat-plan/gmat.html))
 
-## Tabs
+## ACT plan (`index.html`)
 
-- **Today:** the day's session with a checkbox for every block, session notes, streak, days behind, and a catch-up list of missed sessions
-- **Week:** the current week's seven sessions, with arrows to move between weeks
-- **Plan:** all 17 weeks in five phases (Foundations, Build, Speed, Peak, Retake)
-- **Progress:** streaks, on-time rate, a day-by-day heatmap, hours by section, the score path against the 675 pace, and a backup code for moving progress between devices
-- **Guide:** the reality check, weekly rhythm, key dates, session rules, test rules, and materials
+An enhanced ACT plan from a rescored 31 (English 29, Math 29, Reading 34 on Official Practice Test 1, Oct 8, 2026) to a 33, with 32 as the floor, for the Dec 12, 2026 national test. Science is skipped because it doesn't count toward the composite.
 
-Official Practice Exams fall on Oct 24, Nov 14, Dec 5, Dec 19, and Dec 26. The weeks of BYU finals (Dec 7 to 18) use short maintenance sets.
+- **Schedule:** 60 minutes on weekdays only, from a setup session on Fri Oct 9 through the taper week of Dec 7 to 11. Saturdays and Sundays are off. 47 sessions, about 44.5 study hours.
+- **Phases:** Rebuild, Checkpoint 1 and build, Checkpoint 2 and repair, Checkpoint 3, Taper.
+- **Checkpoints:** official Practice Tests 2, 3 and 4, one section per day, starting Oct 26 (target 32), Nov 16 (target 33) and Nov 30 (target 33).
+- **Tabs:** Today, Week, Plan, Progress (streaks, heatmap with weekends shown as off, hours by section, section and composite score table, score path chart, backup code), and Guide (rescored practice test, where the points are, pacing targets, checkpoints, key dates, verified test rules with sources, free resources).
+- **Saving:** localStorage key `act-33-plan-v1`. Backup codes start with `ACT32:`.
 
-Progress saves in your browser (localStorage). Use the backup code on the Progress tab to move it to another device.
+Materials are all free: the official ACT practice tests and sample questions, the OnePrep question bank (third-party), Khan Academy math and grammar, Desmos, and Claude as a tutor.
 
-## Materials
+## GMAT plan (`gmat.html`)
 
-- **Owned:** [GMAT Official Guide 2026–2027 Bundle](https://www.amazon.com/dp/1394414951): Official Guide plus the Quantitative, Verbal, and Data Insights Reviews, each with a one-time code for the online question bank ([access instructions](https://support.mba.com/hc/en-us/articles/52031938654875-Accessing-GMAT-and-EA-Prep-Products))
-- **Free lessons:** [GMAT Ninja free course](https://www.gmatninja.com/gmat/free-gmat-course-online/), [Khan Academy algebra basics](https://www.khanacademy.org/math/algebra-basics) and [statistics and probability](https://www.khanacademy.org/math/statistics-probability), and Claude as a tutor (prompts on the Guide tab)
-- **Practice exams:** [Official Practice Exams 1 and 2](https://www.mba.com/exam-prep/gmat-official-starter-kit-practice-exams-1-and-2-free) (free), [3 to 6](https://www.mba.com/exam-prep/gmat-official-practice-exams-3-6) (buy before Nov 14), and free [Manhattan Prep and Kaplan tests](https://www.kaptest.com/gmat/free/gmat-practice-test-options) for the retake weeks
-- **Explanations:** [GMAT Club forum](https://gmatclub.com/forum/)
-- **Only if Quant stalls by Nov 14:** one month of [Target Test Prep](https://gmat.targettestprep.com/plans)
+The original GMAT Focus Edition plan: 90 minutes a day from Sep 27, 2026, through Test 1 on Jan 2, 2027 and a retake on Jan 23, 2027. It's unchanged apart from the switcher and a guard that rejects ACT backup codes. It still saves under `gmat-675-plan-v1`, and backup codes start with `GMAT675:`, so existing GMAT progress carries over.
+
+GMAT materials: [Official Guide 2026–2027 Bundle](https://www.amazon.com/dp/1394414951), [GMAT Ninja free course](https://www.gmatninja.com/gmat/free-gmat-course-online/), [Official Practice Exams](https://www.mba.com/exam-prep/gmat-official-starter-kit-practice-exams-1-and-2-free), and the [GMAT Club forum](https://gmatclub.com/forum/).
